@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: left;
+  }
+  
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  
