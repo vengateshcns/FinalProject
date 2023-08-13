@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { Button, Stack } from "@mui/material";
 import {TextField} from "@mui/material";
-
+import TextFieldComp from "./TextFieldComp";
 
 export default function Signup() {
     const [data, setData] = useState({
         Name : "",
         Email: "",
         Password:"",
-        Phone:parseInt("")
+        Phone:''
     })
     const [error, setError] = useState({})
 
     const handleChange = (e) =>{
-        const {name,value} = e.target;
+        const {name="",value=""} = e.target || {};
         setData({...data,[name]:value})
     }
 
@@ -58,14 +58,19 @@ export default function Signup() {
 
         return error;
     }
+
+    const nameProps ={
+        label:"Name", name:"Name",type:"text", value:data, onChange : handleChange,error : error
+    }
     
   return (
     
         <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
         <div>
-        <TextField label="Name" name="Name" type="text" value={data.Name} onChange={handleChange}  />
-        {error.Name && <span style={{color:"red"}}>{error.Name}</span>}
+            <TextFieldComp {...nameProps}/>
+        {/* <TextField label="Name" name="Name" type="text" value={data.Name} onChange={handleChange}  />
+        {error.Name && <span style={{color:"red"}}>{error.Name}</span>} */}
         </div>
         <div>
         <TextField label="Email" name="Email" type="text" value={data.Email} onChange={handleChange}/>
