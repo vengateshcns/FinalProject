@@ -1,12 +1,19 @@
 import React from 'react'
-import Header from './Header Components/Header';
+import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
+import Dashboard from './Components/Dashboard'
 
 
 
 function App() {
   return (
     <>
-    <Header/>
+    <BrowserRouter>
+    <Routes>
+
+      <Route path='/' element={<Dashboard/>} />
+      
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }
