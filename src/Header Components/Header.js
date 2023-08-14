@@ -5,12 +5,13 @@ import './Header.css';
 import Searchbar from './Searchbar';
 import Cart from './Cart';
 import Menu from './Menu';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <div className='HeaderContainer'>
       <div className='logoContainer'>
-        <Logo />
+        <Link to="/"><Logo /></Link>
       </div>
       <Menu/>
       <Searchbar/>
