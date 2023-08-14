@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
-import Dashboard from './Components/Dashboard'
+import Dashboard from './Components/Dashboard';
+import ProductDetails from './Components/Dashboard/ProductDetails';
 
 
 
@@ -11,6 +12,7 @@ function App() {
     <Routes>
 
       <Route path='/' element={<Dashboard/>} />
+      <Route path='/products/:id' element={<ProductDetails/>} />
       
     </Routes>
     </BrowserRouter>
